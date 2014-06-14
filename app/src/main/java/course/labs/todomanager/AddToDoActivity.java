@@ -93,8 +93,7 @@ public class AddToDoActivity extends Activity {
 			public void onClick(View v) {
 				log("Entered cancelButton.OnClickListener.onClick()");
 
-				//TODO - Implement onClick().
-                // This is going to be the first to do
+				//TODO - Implement onClick()
 
 			}
 		});

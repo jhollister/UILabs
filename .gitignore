@@ -25,8 +25,14 @@ Thumbs.db
 .classpath
 .project
 
+
 # Android Studio
-#.idea
-.idea/workspace.xml
 .gradle
 build/
+
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+.idea/gradle.xml

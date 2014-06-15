@@ -63,12 +63,15 @@ public class ToDoManagerActivity extends ListActivity {
 
 				log("Entered footerView.OnClickListener.onClick()");
 
-				//TODO - Attach Listener to FooterView. Implement onClick().
+				//- Attach Listener to FooterView. Implement onClick().
+                Intent intent = new Intent(ToDoManagerActivity.this, AddToDoActivity.class);
+                startActivity(intent);
+
 
 			}
 		});
 
-		//TODO - Attach the adapter to this ListActivity's ListView
+		//- Attach the adapter to this ListActivity's ListView
         getListView().setAdapter(mAdapter);
 
 	}

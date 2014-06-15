@@ -93,7 +93,8 @@ public class AddToDoActivity extends Activity {
 			public void onClick(View v) {
 				log("Entered cancelButton.OnClickListener.onClick()");
 
-				//TODO - Implement onClick()
+				// - Implement onClick()
+                finish();
 
 			}
 		});
@@ -106,12 +107,12 @@ public class AddToDoActivity extends Activity {
 			public void onClick(View v) {
 				log("Entered resetButton.OnClickListener.onClick()");
 
-				//TODO - Reset data fields to default values
-				
+				// - Reset data fields to default values
+                mTitleText.setText("");
+                mPriorityRadioGroup.check(mDefaultPriorityButton.getId());
+                mStatusRadioGroup.check(mDefaultStatusButton.getId());
+                setDefaultDateTime();
 
-			
-			
-			
 			}
 		});
 

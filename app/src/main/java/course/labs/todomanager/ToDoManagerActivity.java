@@ -81,10 +81,14 @@ public class ToDoManagerActivity extends ListActivity {
 
 		log("Entered onActivityResult()");
 
-		// TODO - Check result code and request code.
+		// Check result code and request code.
 		// If user submitted a new ToDoItem
 		// Create a new ToDoItem from the data Intent
 		// and then add it to the adapter
+        if ((requestCode == AddToDoActivity.SUBMIT_CODE) && (resultCode == RESULT_OK)) {
+            ToDoItem item = new ToDoItem(data);
+            mAdapter.add(item);
+        }
 
 	}
 

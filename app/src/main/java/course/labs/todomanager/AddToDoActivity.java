@@ -27,6 +27,9 @@ import course.labs.todomanager.ToDoItem.Status;
 public class AddToDoActivity extends Activity {
 	
 	// 7 days in milliseconds - 7 * 24 * 60 * 60 * 1000
+
+    public static final int SUBMIT_CODE = 1;
+
 	private static final int SEVEN_DAYS = 604800000;
 
 	private static final String TAG = "Lab-UserInterface";
@@ -127,23 +130,25 @@ public class AddToDoActivity extends Activity {
 
 				// Gather ToDoItem data  
 				
-				//TODO - Get Priority
-				Priority priority = null;
+				// Get Priority
+				Priority priority = getPriority();
 
-				//TODO -  Get Status
-				Status status = null;
+				// Get Status
+				Status status = getStatus();
 
-				//TODO -  Title
-				String titleString = null;
+				// Title
+				String titleString = mTitleText.toString();
 
 				// Date
 				String fullDate = dateString + " " + timeString;
 
 				// Package ToDoItem data into an Intent
-				Intent data = new Intent();
+				Intent data = new Intent(AddToDoActivity.this, ToDoManagerActivity.class);
+
 				ToDoItem.packageIntent(data, titleString, priority, status, fullDate);
 
-				//TODO - return data Intent and finish
+				// return data Intent and finish
+                startActivityForResult(data, SUBMIT_CODE);
 				
 
 				

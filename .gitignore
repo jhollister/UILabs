@@ -34,5 +34,3 @@ build/
 .idea/tasks.xml
 .idea/datasources.xml
 .idea/dataSources.ids
-.idea/gradle.xml
-.idea/misc.xml

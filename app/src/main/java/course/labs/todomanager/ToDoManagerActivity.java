@@ -92,9 +92,6 @@ public class ToDoManagerActivity extends ListActivity {
             ToDoItem item = new ToDoItem(data);
             mAdapter.add(item);
         }
-        else {
-            log ("Request code NO");
-        }
 
 	}
 

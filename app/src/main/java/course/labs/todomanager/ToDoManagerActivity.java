@@ -43,6 +43,8 @@ public class ToDoManagerActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+        //log("Entered ToDoManagerActivity onCreate()");
+
 		// Create a new TodoListAdapter for this ListActivity's ListView
 		mAdapter = new ToDoListAdapter(getApplicationContext());
 
@@ -65,8 +67,7 @@ public class ToDoManagerActivity extends ListActivity {
 
 				//- Attach Listener to FooterView. Implement onClick().
                 Intent intent = new Intent(ToDoManagerActivity.this, AddToDoActivity.class);
-                startActivity(intent);
-
+                startActivityForResult(intent, ADD_TODO_ITEM_REQUEST);
 
 			}
 		});
@@ -79,15 +80,22 @@ public class ToDoManagerActivity extends ListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
+
 		log("Entered onActivityResult()");
+        log("Request code: " + requestCode + " Result Code: " + resultCode);
 
 		// Check result code and request code.
 		// If user submitted a new ToDoItem
 		// Create a new ToDoItem from the data Intent
 		// and then add it to the adapter
         if ((requestCode == ADD_TODO_ITEM_REQUEST) && (resultCode == RESULT_OK)) {
+            log("Request code OK");
             ToDoItem item = new ToDoItem(data);
             mAdapter.add(item);
+        }
+        else {
+            log ("Request code NO");
         }
 
 	}

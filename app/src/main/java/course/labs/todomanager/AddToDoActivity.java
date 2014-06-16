@@ -136,8 +136,8 @@ public class AddToDoActivity extends Activity {
 				// Get Status
 				Status status = getStatus();
 
-				// Title
-				String titleString = mTitleText.toString();
+				// Titles
+				String titleString = mTitleText.getText().toString();
 
 				// Date
 				String fullDate = dateString + " " + timeString;
@@ -148,7 +148,10 @@ public class AddToDoActivity extends Activity {
 				ToDoItem.packageIntent(data, titleString, priority, status, fullDate);
 
 				// return data Intent and finish
-                startActivityForResult(data, SUBMIT_CODE);
+                setResult(RESULT_OK, data);
+
+
+                finish();
 				
 
 				

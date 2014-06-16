@@ -28,7 +28,7 @@ public class AddToDoActivity extends Activity {
 	
 	// 7 days in milliseconds - 7 * 24 * 60 * 60 * 1000
 
-    public static final int SUBMIT_CODE = 1;
+    private static final int SUBMIT_CODE = 0;
 
 	private static final int SEVEN_DAYS = 604800000;
 
